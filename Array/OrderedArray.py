@@ -52,7 +52,7 @@ class OrderedArray(object):
         
         index = self.find(item)
 
-        for j in range(self.__nItmes, index, -1):
+        for j in range(self.__nItems, index, -1):
             self.__a[j] = self.__a[j-1]
             self.__a[index] = item
             self.__nItems += 1
@@ -65,4 +65,6 @@ class OrderedArray(object):
                 self.__a[k] = self.__a[k+1]
             return True
         return False
+
+
 
