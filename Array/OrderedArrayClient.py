@@ -16,3 +16,7 @@ arr.insert(0)
 arr.insert(3)
 
 print("Array containing: ", len(arr), "items:", arr)
+
+arr.delete(99)
+
+print("Array containing: ", len(arr), "items:", arr)
