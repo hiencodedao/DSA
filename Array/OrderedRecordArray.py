@@ -57,7 +57,7 @@ class OrderedRecordArray(object):
 
     def delete(self, item):     # Delete any occurrence
         j = self.find(self.__key(item))
-        if self.__a[j] == self.__key(item) and j < self.__nItems:
+        if self.__a[j] == item and j < self.__nItems:
             self.__nItems -= 1
             for k in range(j, self.__nItems):
                 self.__a[k] = self.__a[k+1]
