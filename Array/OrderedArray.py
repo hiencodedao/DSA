@@ -13,7 +13,7 @@ class OrderedArray(object):
             else:
                 print('Index ' + str(n) + ' is out of range')
     
-    def traverse(self): 
+    def traverse(self, function=print): 
         for j in range(self.__nItems):
             function(self.__a[j])
 

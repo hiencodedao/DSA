@@ -20,3 +20,5 @@ print("Array containing: ", len(arr), "items:", arr)
 arr.delete(99)
 
 print("Array containing: ", len(arr), "items:", arr)
+
+arr.traverse()
