@@ -34,7 +34,8 @@ class Array(object):
     def delete(self, item):
         for i in range(self.__nItems):
             if self.__a[i] == item:
-                for k in range(i, self.__nItems - 1):
+                self.__nItems -= 1
+                for k in range(i, self.__nItems):
                     self.__a[k] = self.__a[k+1]
                 return True
             return False
@@ -42,3 +43,25 @@ class Array(object):
     def traverse(self, function=print):
         for j in range(self.__nItems):
             function(self.__a[j])
+
+    def getMaxNum(self):
+        if self.__nItems != 0:
+            max_num = self.__a[1]
+            for j in range(self.__nItems): 
+                if isinstance(self.__a[j], (int, float)) and self.__a[j] > max_num:
+                    max_num = self.__a[j]
+            return max_num
+        else:
+            return None
+
+    def deleteMaxNum(self):
+        if self.__nItems != 0:
+            max_num = self.__a[1]
+            for j in range(self.__nItems): 
+                if isinstance(self.__a[j], (int, float)) and self.__a[j] > max_num:
+                    max_num = self.__a[j]
+            self.delete(max_num)
+            return max_num
+        else:
+            return None
+                
