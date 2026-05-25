@@ -65,6 +65,4 @@ class OrderedArray(object):
                 self.__a[k] = self.__a[k+1]
             return True
         return False
-
-
-
+    
