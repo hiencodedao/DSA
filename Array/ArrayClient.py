@@ -37,3 +37,5 @@ arr.traverse()
 orderArr = arr.removeDuplicate(arr)
 print("This is result of removeDuplicate method:")
 orderArr.traverse()
+
+print("This is the max number in the array and delete it:", arr.deleteMaxNum())

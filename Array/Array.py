@@ -36,7 +36,8 @@ class Array(object):
     def delete(self, item):
         for i in range(self.__nItems):
             if self.__a[i] == item:
-                for k in range(i, self.__nItems - 1):
+                self.__nItems -= 1
+                for k in range(i, self.__nItems):
                     self.__a[k] = self.__a[k+1]
                 self.__nItems -= 1
                 return True
@@ -65,9 +66,3 @@ class Array(object):
                 if removeDupArr.find(x) == -1 and isinstance(x, (int, float)):
                     removeDupArr.insert(x)
         return removeDupArr
-            
-
-
-
-
-        
