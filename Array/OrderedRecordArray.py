@@ -34,7 +34,7 @@ class OrderedRecordArray(object):
 
         while lo <= hi:
             mid = (lo + hi)//2 
-            if self.__key(self.__a[mid]) == key: 
+            if self.__key(self.__a[mid]) == key:
                 return mid
             elif self.__key(self.__a[mid]) < key:
                 lo = mid + 1
