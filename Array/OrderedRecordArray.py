@@ -63,6 +63,32 @@ class OrderedRecordArray(object):
                 self.__a[k] = self.__a[k+1]
             return True
         return False
-                
+
+    def merge(self, arr, key_fn):
+        mergeArr = OrderedRecordArray(self.__nItems + arr.__nItems, key=key_fn)
+        
+        if self.__key is arr.__key:
+            i = 0
+            j = 0
+
+            while i < self.__nItems and j < arr.__nItems:
+                if self.__key(self.__a[i]) <= arr.__key(arr.__a[j]):
+                    mergeArr.insert(self.__a[i])
+                    i += 1
+                else:
+                    mergeArr.insert(arr.__a[j])
+                    j += 1
+
+            while i < self.__nItems:
+                mergeArr.insert(self.__a[i])
+                i += 1
+
+            while j < arr.__nItems:
+                mergeArr.insert(arr.__a[j])
+                j += 1
+
+            return mergeArr
+        else: 
+            return None
 
     
