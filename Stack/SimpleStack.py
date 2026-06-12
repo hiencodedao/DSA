@@ -4,10 +4,14 @@ class stack(object):
         self.__top = -1
 
     def push(self, item):
+        if self.isFull(): 
+            raise Exception("Stack overflow")
         self.__top += 1
         self.__stackList[self.__top] = item
 
-    def pop(self): 
+    def pop(self):
+        if self.isEmpty(): 
+            raise Exception("Stack is empty")
         top = self.__stackList[self.__top]
         self.__stackList[self.__top] = None
         self.__top -= 1
