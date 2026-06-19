@@ -8,7 +8,7 @@ class Queue(object):
 
     def insert(self, item): 
         if self.isFull():
-            raise Exception("Queue is full")
+            raise Exception("Queue overflow")
         self.__rear += 1 
         if self.__rear == self.__maxSize: 
             self.__rear = 0
@@ -18,7 +18,7 @@ class Queue(object):
     
     def remove(self):
         if self.isEmpty(): 
-            raise Exception("Queue is empty")
+            raise Exception("Queue underflow")
         remove_item = self.__que[self.__front] 
         self.__que[self.__front] = None
         self.__front += 1

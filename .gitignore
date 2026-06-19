@@ -1,2 +1,5 @@
 # Ignore cache files
 *.pyc
+
+# Ignore pdf
+*.pdf
