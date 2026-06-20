@@ -50,7 +50,7 @@ def main():
             ["D", queue_D]): 
         que_lab.insert(i)
 
-    line_reader('Ca', que_lab)
+    line_reader('aaaAAAaabbB', que_lab)
     print_current(que_lab)
 
 if __name__ == "__main__": 
