@@ -1,4 +1,4 @@
-def identity(x): return x
+def identity(x): return x[0]
 
 class Link(object): 
     def __init__(self, datum, next = None):
@@ -129,5 +129,50 @@ class LinkedList(object):
             previous = link
 
         raise Exception("Cannot find the Link that match the goal")
+
+    # Rewrite 3 method to use the iterator (treverse, __len__, __str__)
+
+    # def traverse(self, func=print):
+    #     link = self.__ListIterator(self)
+    #     while link.hasMore():
+    #         func(link.next())
+    #         # link.next()
+
+    # def __len__(self): 
+    #     link = self.__ListIterator(self)
+    #     count = 0
+    #     while link.hasMore():
+    #         count += 1
+    #         link.getNext()
+    #     return count
+
+    # def __str__(self):
+    #     ans = '['
+    #     link = self.__ListIterator(self)
+    #     while link.hasMore():
+    #         if len(ans) > 1:
+    #             ans += ', '
+    #         ans += str(link.next())
+    #     ans += ']'
+    #     return ans
+
+    class __ListIterator(object):
+        def __init__(self, llist):
+            self._llist = llist
+            self._next = llist.getNext()
+        
+        def next(self):
+            if self._next is None:
+                raise StopIteration
+            item = self._next.getData() 
+            self._next = self._next.getNext()
+            return item
+
+        def hasMore(self):
+            return self._next is not None
+
+    
+        
+        
 
     

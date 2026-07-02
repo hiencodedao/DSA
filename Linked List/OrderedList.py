@@ -14,24 +14,27 @@ class OrderedList(DoubleEndedList):
     def getFirst(self):
         return self.__first
 
+    def getKey(self, datum):
+        return self.__key(datum)
+
     def find(self, goal):
         link = self.getFirst()
         while (link is not None and 
-                self.__key(link.getData()) < goal):
+                self.getKey(link.getData()) < goal):
             link = link.getNext()
         return link
 
     def search(self, goal):
         link = self.find(goal)
         if (link is not None
-            and self.__key(link.getData()) == goal):
+            and self.getKey(link.getData()) == goal):
             return link.getData()
 
     def insert(self, datum):
-        goal = self.__key(datum)
+        goal = self.getKey(datum)
         previous = self
         while (previous.getNext() is not None
-                and self.__key(previous.getNext().getData()) < goal):
+                and self.getKey(previous.getNext().getData()) < goal):
                 previous = previous.getNext() 
 
         newLink = Link(datum, previous.getNext())
@@ -43,10 +46,10 @@ class OrderedList(DoubleEndedList):
         
         previous = self
         while (previous.getNext() is not None
-                and self.__key(previous.getNext().getData()) < goal):
+                and self.getKey(previous.getNext().getData()) < goal):
                 previous = previous.getNext()
 
-        if (goal != self.__key(previous.getNext().getData())
+        if (goal != self.getKey(previous.getNext().getData())
             or previous.getNext() is None):
             raise Exception('No datum with matching key found '
             'in the list')

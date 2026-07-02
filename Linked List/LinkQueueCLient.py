@@ -15,3 +15,5 @@ print('The front of the queue is ', queue.peek())
 while not queue.isEmpty():
     print('Removing ', queue.dequeue(), ' from the queue',
     'leaves ', len(queue), 'items: ', queue)
+
+queue.traverse()
